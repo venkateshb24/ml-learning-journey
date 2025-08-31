@@ -1,30 +1,40 @@
 import numpy as np
 
-# slicing a 1D array
+# universal functions (ufuncs) are functions that operate element-wise on ndarrays
 
-arr = np.array([1, 2, 3, 4, 5, 6, 7])
-print(arr[1:5])  # Output: [2 3 4 5]
+arr = np.array([1, 2, 3, 4])
+print("Original array:", arr)
 
-# returning till end of array
-print(arr[4:])  # Output: [5 6 7]
+# Example of a ufunc: np.sqrt
+sqrt_arr = np.sqrt(arr)
+print("Square root of each element:", sqrt_arr)
 
-# return negative index
-print(arr[-3: -1])  # Output: [5 6]
+np2 = np.array([-3, -2, -1, 0, 1, 2, 3])
+# absolute value
+abs_arr = np.abs(np2)
+print("Absolute values:", abs_arr)
 
-# steps
-print(arr[1:6])
-print(arr[1:6:2])  # Output: [2 4 6]
+# exponential
+exp_arr = np.exp(arr)
+print("Exponential of each element:", exp_arr)
 
-# steps on entire array
-print(arr[::2])  # Output: [1 3 5 7]
-print(arr[::3]) # Output: [1 4 7]
+# min and max
+min_val = np.min(arr)
+max_val = np.max(arr)
+print("Min value:", min_val)
+print("Max value:", max_val)
 
-# slice a 2D array
-arr2d = np.array([[1,2,3,4,5],[6,7,8,9,10]])
-# pull out a single element
-print(arr2d[1,3])  # Output: 9
+# sign positive, negative, or zero
+sign_arr = np.sign(np2)
+print("Sign of each element:", sign_arr)    
 
-#slice
-print(arr2d[0:1,1:3])  # Output: [[2 3]]
-print(arr2d[0:2,1:3])  # Output: [[2 3] [7 8]]
+# trig sin cos log
+sin_arr = np.sin(arr)
+cos_arr = np.cos(arr)
+log_arr = np.log(arr)
+print("Natural logarithm of each element:", log_arr)
+print("Sine of each element:", sin_arr)
+print("Cosine of each element:", cos_arr)
+
+# and much more...
 

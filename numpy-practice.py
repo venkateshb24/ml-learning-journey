@@ -1,41 +1,30 @@
-# we already have list but it won't be work good for larger datasets
-# for larger datasets we can use numpy arrays
-
 import numpy as np
 
-# numpy - numerical python
-# n-d array - multidimensional array
+# slicing a 1D array
 
-a = np.array([0, 1, 2, 3, 4, 5])
-print(a)
-print(type(a))
-print(a.shape)  # gives the shape of the array
+arr = np.array([1, 2, 3, 4, 5, 6, 7])
+print(arr[1:5])  # Output: [2 3 4 5]
 
-# range function
-b = np.arange(6)  # gives array from 0 to n-1
-print(b)
+# returning till end of array
+print(arr[4:])  # Output: [5 6 7]
 
-# step
-c = np.arange(0, 11, 2)  # start, end, step
-print(c)
+# return negative index
+print(arr[-3: -1])  # Output: [5 6]
 
-# zeros
-d = np.zeros(10)  # gives array of 10 zeros
-print(d)
+# steps
+print(arr[1:6])
+print(arr[1:6:2])  # Output: [2 4 6]
 
-# Multidimensional zeros
-e = np.zeros((3, 4))  # gives 3x4 array of zeros
-print(e)
+# steps on entire array
+print(arr[::2])  # Output: [1 3 5 7]
+print(arr[::3]) # Output: [1 4 7]
 
-# Full 
-f = np.full((10), 5)  # gives array of 10 fives
-print(f)
+# slice a 2D array
+arr2d = np.array([[1,2,3,4,5],[6,7,8,9,10]])
+# pull out a single element
+print(arr2d[1,3])  # Output: 9
 
-# Multidimensional full 
-g = np.full((3, 4), 7)  # gives 3x4 array of sevens
-print(g)
+#slice
+print(arr2d[0:1,1:3])  # Output: [[2 3]]
+print(arr2d[0:2,1:3])  # Output: [[2 3] [7 8]]
 
-# conversion of list to numpy array
-list1 = [1, 2, 3, 4, 5]
-h = np.array(list1)
-print(h)

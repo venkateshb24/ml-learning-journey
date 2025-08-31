@@ -1,35 +1,17 @@
 import numpy as np
 
-# iterate
+# searching for a value in a 1D array
 
-arr = np.array([[1, 2, 3], [4, 5, 6]])
-# normal iteration
-for x in arr:
-    print(x)
+# using np.where
+arr = np.array([10, 20, 30, 40, 50, 30])
+index = np.where(arr == 30)
+print("Index of 30 using np.where:", index)  # Output: (array([2, 5]),)
 
-# iterating through each element of the 2-D array
-for x in arr:
-    for y in x:
-        print(y)
+# only even numbers in a 1D array using where
+even_indices = np.where(arr % 2 == 0)
+print("Indices of even numbers using np.where:", even_indices[0])  # Output: [0 1 2 3 4]
 
-# iterating through each element of the 2-D array using nditer()
-for x in np.nditer(arr):
-    print(x) 
+# filtering using boolean indexing
+even_numbers = arr[arr % 2 == 0]
+print("Even numbers using boolean indexing:", even_numbers)  # Output: [10 20 30 40 50 30]
 
-
-
-# sorting
-
-arr = np.array([3, 2, 0, 1])
-print(arr)
-print(np.sort(arr))
-
-alphabet = np.array(['b', 'd', 'a', 'c'])
-print(np.sort(alphabet))
-
-bool_arr = np.array([True, False, True])
-print(np.sort(bool_arr))
-
-# sorting a 2-D array
-arr_2d = np.array([[3, 2, 4], [5, 0, 1]])
-print(np.sort(arr_2d))  # sorts each row

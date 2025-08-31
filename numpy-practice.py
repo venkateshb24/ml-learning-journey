@@ -1,38 +1,35 @@
 import numpy as np
 
-# shape and reshape
+# iterate
 
-# 1d array
-arr1d = np.array([1, 2, 3, 4, 5, 6])
-print("1D Array:")
-print(arr1d)
-print("Shape of 1D array:", arr1d.shape)
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+# normal iteration
+for x in arr:
+    print(x)
 
-# 2d array
-arr2d = np.array([[1, 2, 3], [4, 5, 6]])
-print("\n2D Array:")
-print(arr2d)
-print("Shape of 2D array:", arr2d.shape)
+# iterating through each element of the 2-D array
+for x in arr:
+    for y in x:
+        print(y)
 
-# Reshape 1d to 2d
-reshaped_arr = arr1d.reshape(2, 3)
-print("\nReshaped 1D to 2D Array:")
-print(reshaped_arr)
-print("Shape of reshaped array:", reshaped_arr.shape)
+# iterating through each element of the 2-D array using nditer()
+for x in np.nditer(arr):
+    print(x) 
 
-# reshape 1d to 3d
-reshaped_arr_3d = arr1d.reshape(2, 1, 3)
-print("\nReshaped 1D to 3D Array:")
-print(reshaped_arr_3d)
-print("Shape of reshaped 3D array:", reshaped_arr_3d.shape)
 
-# flattening arrays
-flattened_arr = arr2d.flatten()
-print("\nFlattened 2D Array to 1D:")
-print(flattened_arr)
-print("Shape of flattened array:", flattened_arr.shape)
 
-flattened_arr_3d = reshaped_arr_3d.reshape(-1)
-print("\nFlattened 3D Array to 1D:")
-print(flattened_arr_3d)
-print("Shape of flattened 3D array:", flattened_arr_3d.shape)
+# sorting
+
+arr = np.array([3, 2, 0, 1])
+print(arr)
+print(np.sort(arr))
+
+alphabet = np.array(['b', 'd', 'a', 'c'])
+print(np.sort(alphabet))
+
+bool_arr = np.array([True, False, True])
+print(np.sort(bool_arr))
+
+# sorting a 2-D array
+arr_2d = np.array([[3, 2, 4], [5, 0, 1]])
+print(np.sort(arr_2d))  # sorts each row
